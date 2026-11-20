@@ -11,12 +11,12 @@ let package = Package(
         .library(name: "Syntax", targets: ["Syntax"]),
         .library(name: "SyntaxStyling", targets: ["SyntaxStyling"]),
         .library(name: "SyntaxLSP", targets: ["SyntaxLSP"]),
-        .executable(name: "t_syntax", targets: ["SyntaxTests"])
+        .library(name: "SyntaxANSI", targets: ["SyntaxANSI"]),
+        .library(name: "SyntaxHTML", targets: ["SyntaxHTML"]),
     ],
     dependencies: [
         .package(url: "https://github.com/leviouwendijk/Position.git", branch: "master"),
         .package(url: "https://github.com/leviouwendijk/Primitives.git", branch: "master"),
-        .package(url: "https://github.com/leviouwendijk/Testing.git", branch: "master")
     ],
     targets: [
         .target(
@@ -37,17 +37,8 @@ let package = Package(
                 .product(name: "Position", package: "Position")
             ]
         ),
-        .executableTarget(
-            name: "SyntaxTests",
-            dependencies: [
-                "Syntax",
-                "SyntaxStyling",
-                "SyntaxLSP",
-                .product(name: "Position", package: "Position"),
-                .product(name: "Testing", package: "Testing")
-            ],
-            path: "Testing/SyntaxTests"
-        )
+        .target(name: "SyntaxANSI", dependencies: ["Syntax", "SyntaxStyling"]),
+        .target(name: "SyntaxHTML", dependencies: ["Syntax", "SyntaxStyling"]),
     ]
 )
 

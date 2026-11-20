@@ -36,6 +36,7 @@ enum SyntaxTestSuite {
     static let suite = TestSuite("syntax", title: "Canonical syntax coordinates") {
         stylingSuite
         lspSuite
+        renderingSuite
         Test("typed kinds are unique by canonical name") {
             do {
                 _ = try SyntaxLanguage<AliasedKind>(
