@@ -15,8 +15,8 @@ let package = Package(
         .library(name: "SyntaxHTML", targets: ["SyntaxHTML"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/leviouwendijk/Position.git", branch: "master"),
-        .package(url: "https://github.com/leviouwendijk/Primitives.git", branch: "master"),
+        .package(url: "https://github.com/swift-lco/Position.git", branch: "master"),
+        .package(url: "https://github.com/swift-lco/Primitives.git", branch: "master"),
     ],
     targets: [
         .target(

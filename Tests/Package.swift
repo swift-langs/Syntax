@@ -11,7 +11,7 @@ let package = Package(
         .executable(name: "t_syntax", targets: ["SyntaxTests"])
     ],
     dependencies: [
-        .package(url: "https://github.com/leviouwendijk/Position.git", branch: "master"),
+        .package(url: "https://github.com/swift-lco/Position.git", branch: "master"),
         .package(url: "https://github.com/swift-tooling/Testing.git", branch: "master"),
         .package(path: ".."),
     ],
